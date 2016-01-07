@@ -1,0 +1,29 @@
+<h1>Deposit Coins in the Bank</h1>
+
+<div class="col-md-12">
+  <div class="col-md-4 col-xs-12 col-md-offset-4">
+    <h2>Bank of Epicodus Vault:</h2>
+    <ul>
+      <li>$quartersLeft Quarters Left</li>
+      <li>$dimesLeft Dimes Left</li>
+      <li>$nickelsLeft Nickels Left</li>
+      <li>$penniesLeft</li>
+    </ul>
+  </div>
+</div>
+
+<div class="col-md-12">
+  <h2 id="deposit-heading">Enter the Number of Coins to Deposit</h2>
+  <form class="col-md-4 col-xs-12 col-md-offset-4" action="/technician-display" method="get">
+    <div class="form-group">
+      <label for="quarters">Quarters</label>
+      <input id="quarters" type="number" name="depositqtr" min="0" max="5" required value="0" class="form-control">
+      <label for="dimes">Dimes</label>
+      <input id="dimes" type="number" name="depositdim" min="0" max="5" required value="0" class="form-control">
+      <label for="dimes">Nickels</label>
+      <input id="nickels" type="number" name="depositnic" min="0" max="5" required value="0" class="form-control">
+    </div>
+    <p>As always, the Bank of Epicodus has infinite pennies.</p>
+    <button type="submit" class="btn btn-info">Deposit Coins</button>
+  </form>
+</div>

@@ -7,3 +7,7 @@ ul, li {
   margin-left: 0;
   padding-left: 0;
 }
+
+#deposit-heading {
+  text-align: center;
+}
