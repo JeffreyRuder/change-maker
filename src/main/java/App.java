@@ -15,7 +15,19 @@ public class App {
     get("/", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("template", "templates/index.vtl");
+
+      Integer quartersLeft = bankOfEpicodus.getQuarters();
+      Integer dimesLeft = bankOfEpicodus.getDimes();
+      Integer nickelsLeft = bankOfEpicodus.getNickels();
+      String penniesLeft = "The Bank of Epicodus has infinite pennies!";
+
+      model.put("quartersLeft", quartersLeft);
+      model.put("dimesLeft", dimesLeft);
+      model.put("nickelsLeft", nickelsLeft);
+      model.put("penniesLeft", penniesLeft);
+
       return new ModelAndView(model, layout);
+
     }, new VelocityTemplateEngine());
 
     get("/results", (request, response) -> {
@@ -32,7 +44,7 @@ public class App {
       for (Map.Entry<String, String> resultsIterator : results.entrySet()) {
         String key = resultsIterator.getKey();
         String value = resultsIterator.getValue();
-        model.put(key, value + " ");
+        model.put(key, value);
       }
 
       return new ModelAndView(model, layout);
