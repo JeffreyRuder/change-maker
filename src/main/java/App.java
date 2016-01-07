@@ -10,7 +10,7 @@ public class App {
   public static void main(String[] args) {
     staticFileLocation("/public");
     String layout = "templates/layout.vtl";
-    ChangeMachine bankOfEpicodus = new ChangeMachine(10, 10, 10);
+    ChangeMachine bankOfEpicodus = new ChangeMachine(100, 100, 100);
 
     get("/", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
@@ -27,7 +27,6 @@ public class App {
       model.put("penniesLeft", penniesLeft);
 
       return new ModelAndView(model, layout);
-
     }, new VelocityTemplateEngine());
 
     get("/results", (request, response) -> {
