@@ -24,11 +24,11 @@ public class ChangeMachine {
   }
 
   public Integer getNickels() {
-    return mQuartersAvailable;
+    return mNickelsAvailable;
   }
 
   public Integer getDimes() {
-    return mQuartersAvailable;
+    return mDimesAvailable;
   }
 
   public Integer getPennies() {

@@ -16,7 +16,7 @@ public class ChangeMaker {
     String penMsg = "The Bank of Epicodus has infinite pennies, no worries!";
 
     while (centsNeeded != 0) {
-      if (centsNeeded >= 25 && changeMachine.getQuarters() >= 0) {
+      if (centsNeeded >= 25 && changeMachine.getQuarters() > 0) {
         centsNeeded -= 25;
         quartersNeeded += 1;
         changeMachine.subtractQuarter();
@@ -61,6 +61,10 @@ public class ChangeMaker {
     results.put("dimMsg", dimMsg);
     results.put("nicMsg", nicMsg);
     results.put("penMsg", penMsg);
+    results.put("quartersLeft", Integer.toString(changeMachine.getQuarters()));
+    results.put("dimesLeft", Integer.toString(changeMachine.getDimes()));
+    results.put("nickelsLeft", Integer.toString(changeMachine.getNickels()));
+    results.put("penniesLeft", "The Bank of Epicodus has infinite pennies!");
 
     return results;
   }
