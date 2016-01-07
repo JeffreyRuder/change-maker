@@ -15,5 +15,48 @@ public class IntegrationTest extends FluentTest {
   @ClassRule
   public static ServerRule server = new ServerRule();
 
-  //Tests go here
+  @Test
+  public void rootTest() {
+    goTo("http://localhost:4567/");
+    assertThat(pageSource()).contains("Change Maker");
+  }
+
+  @Test
+  public void resultsTest_Quarter_3() {
+    goTo("http://localhost:4567/");
+    fill("#change").with("89");
+    submit(".btn");
+    assertThat(pageSource()).contains("3 Quarters");
+  }
+
+  @Test
+  public void resultsTest_Dime_1() {
+    goTo("http://localhost:4567/");
+    fill("#change").with("89");
+    submit(".btn");
+    assertThat(pageSource()).contains("1 Dimes");
+  }
+
+  @Test
+  public void resultsTest_Nickel_0() {
+    goTo("http://localhost:4567/");
+    fill("#change").with("89");
+    submit(".btn");
+    assertThat(pageSource()).contains("0 Nickels");
+  }
+
+  @Test
+  public void resultsTest_Penny_4() {
+    goTo("http://localhost:4567/");
+    fill("#change").with("89");
+    submit(".btn");
+    assertThat(pageSource()).contains("4 Pennies");
+  }
+
+  @Test
+  public void tryAgain_index() {
+    goTo("http://localhost:4567/results?change=89");
+    click(".btn-success");
+    assertThat(pageSource()).contains("Change Maker");
+  }
 }
