@@ -31,6 +31,10 @@ public class ChangeMachine {
     return mQuartersAvailable;
   }
 
+  public Integer getPennies() {
+    return mPenniesAvailable;
+  }
+
   public void addQuarters(Integer quarters) {
     mQuartersAvailable += quarters;
   }
