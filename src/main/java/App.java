@@ -10,6 +10,7 @@ public class App {
   public static void main(String[] args) {
     staticFileLocation("/public");
     String layout = "templates/layout.vtl";
+    ChangeMachine bankOfEpicodus = new ChangeMachine(10, 10, 10);
 
     get("/", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
@@ -24,14 +25,14 @@ public class App {
       Integer centsNeeded = Integer.parseInt(request.queryParams("change"));
 
       ChangeMaker cm = new ChangeMaker();
-      HashMap<String, Integer> results = cm.makeChange(centsNeeded);
+      HashMap<String, String> results = cm.makeChange(bankOfEpicodus, centsNeeded);
 
       model.put("centsEntered", (Integer.toString(centsNeeded) + " Cents"));
 
-      for (Map.Entry<String, Integer> resultsIterator : results.entrySet()) {
+      for (Map.Entry<String, String> resultsIterator : results.entrySet()) {
         String key = resultsIterator.getKey();
-        String value = Integer.toString(resultsIterator.getValue());
-        model.put(key, value + " " + key);
+        String value = resultsIterator.getValue();
+        model.put(key, value + " ");
       }
 
       return new ModelAndView(model, layout);

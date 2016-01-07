@@ -47,4 +47,16 @@ public class ChangeMachine {
     mNickelsAvailable += nickels;
   }
 
+  public void subtractQuarter() {
+    mQuartersAvailable--;
+  }
+
+  public void subtractDime() {
+    mDimesAvailable--;
+  }
+
+  public void subtractNickel() {
+    mNickelsAvailable--;
+  }
+
 }
