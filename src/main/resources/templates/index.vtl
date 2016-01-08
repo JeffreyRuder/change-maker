@@ -2,7 +2,7 @@
 
 <div class="col-md-12">
   <div class="col-md-4 col-xs-12 col-md-offset-4">
-    <h2>Bank of Epicodus Vault:</h2>
+    <h2>Bank of Epicodus Vault</h2>
     <ul>
       <li>$quartersLeft Quarters Left</li>
       <li>$dimesLeft Dimes Left</li>
@@ -14,11 +14,18 @@
 
 <div class="col-md-12">
   <form class="col-md-4 col-xs-12 col-md-offset-4" action="/results" method="get">
+    <h2>Dispense Coins</h2>
     <div class="form-group">
       <label for="change">Enter the amount of cents to dispense.</label>
       <input id="change" type="number" name="change" min="1" max="99" required class="form-control">
     </div>
     <button type="submit" class="btn btn-info">Dispense Coins</button>
-    <a href='/technician-entry' class="btn btn-danger" role="button">Deposit Coins</a>
   </form>
+</div>
+
+<div class="col-md-12">
+  <div class="col-md-4 col-xs-12 col-md-offset-4">
+    <h2>Deposit Coins Instead</h2>
+    <a href='/technician-entry' class="btn btn-danger" role="button">Deposit Coins</a>
+  </div>
 </div>
